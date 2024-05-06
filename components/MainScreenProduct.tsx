@@ -7,69 +7,53 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-import Image from 'next/image'
-  
-export const MainScreenProduct = () => {
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+  } from "@/components/ui/carousel"
+import { MainScreenProduct } from '@/types';
+
+interface MainScreenProductProps {
+    mainScreenProductList : MainScreenProduct[];
+}
+export const MainScreenProduct = ({mainScreenProductList}:MainScreenProductProps) => {
   return (
-    <div className='flex flex-row gap-4 justify-between py-3'>
-        <Card className=''>
-            <CardHeader>
-                <CardTitle className='flex justify-center'>
-                    <img src="https://cdn.dsmcdn.com/ty1018/product/media/images/prod/SPM/PIM/20231019/13/899e8cb7-16a0-3617-bae0-555eacd2e713/1_org_zoom.jpg" alt=""width="130"
-                    height="90"
-                    className='cursor-pointer' />
-                    
-                </CardTitle>
-                <CardDescription className='text-left'>
-                    Macbook Pro
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <p className='text-ellipsis overflow-hidden text-balance '>Macbook Air M1 Çip 8gb 256gb Ssd Macos 13" Qhd Taşınabilir Bilgisayar Uzay Grisi</p>
-            </CardContent>
-            <CardFooter>
-                <p>25.999</p>
-            </CardFooter>
-        </Card>
-        <Card className=''>
-            <CardHeader>
-                <CardTitle className='flex justify-center'>
-                    <img src="https://cdn.dsmcdn.com/ty1018/product/media/images/prod/SPM/PIM/20231019/13/899e8cb7-16a0-3617-bae0-555eacd2e713/1_org_zoom.jpg" alt=""width="130"
-                    height="90"
-                    className='cursor-pointer' />
-                    
-                </CardTitle>
-                <CardDescription className='text-left'>
-                    Macbook Pro
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <p className='text-ellipsis overflow-hidden text-balance '>Macbook Air M1 Çip 8gb 256gb Ssd Macos 13" Qhd Taşınabilir Bilgisayar Uzay Grisi</p>
-            </CardContent>
-            <CardFooter>
-                <p>25.999</p>
-            </CardFooter>
-        </Card>
-        <Card className=''>
-            <CardHeader>
-                <CardTitle className='flex justify-center'>
-                    <img src="https://cdn.dsmcdn.com/ty1018/product/media/images/prod/SPM/PIM/20231019/13/899e8cb7-16a0-3617-bae0-555eacd2e713/1_org_zoom.jpg" alt=""width="130"
-                    height="90"
-                    className='cursor-pointer' />
-                    
-                </CardTitle>
-                <CardDescription className='text-left'>
-                    Macbook Pro
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <p className='text-ellipsis overflow-hidden text-balance '>Macbook Air M1 Çip 8gb 256gb Ssd Macos 13" Qhd Taşınabilir Bilgisayar Uzay Grisi</p>
-            </CardContent>
-            <CardFooter>
-                <p>25.999</p>
-            </CardFooter>
-        </Card>
-    </div>
+    <Carousel >
+        <CarouselContent className='px-2'>
+            {mainScreenProductList.map((mainScreenProduct,index)=>(
+              <CarouselItem key={index} className="md:basis-48 lg:basis-1/5 items-center flex flex-col ">
+                <Card className=''>
+                    <CardHeader>
+                        <CardTitle className='flex justify-center'>
+                        <img key={index} 
+                            src={
+                                process.env.NEXT_PUBLIC_BASE_URL+
+                                mainScreenProduct?.attributes?.url.data[0].attributes.url
+                            }
+                            alt=""width="130"
+                            height="90"
+                            className='cursor-pointer' />
+                        </CardTitle>
+                            <CardDescription className='text-left'>
+                                {mainScreenProduct.attributes?.name}
+                            </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <p className=''>{mainScreenProduct.attributes?.description}</p>
+                    </CardContent>
+                    <CardFooter>
+                     <p className='text-orange-500'>{mainScreenProduct.attributes?.price} TL</p>
+                    </CardFooter>
+                </Card>
+            </CarouselItem>
+            ))}
+        </CarouselContent >
+        <CarouselPrevious/>
+        <CarouselNext />
+    </Carousel>
 
   )
 }

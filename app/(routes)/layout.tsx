@@ -11,10 +11,12 @@ interface MainLayoutProps{
 const MainLayout = ({children}:MainLayoutProps) => {
   return (
     <>
-        <NavbarTop/>
-        <Navbar/>
-        <NavbarBottom/>
-        <main>
+        <div >
+          <NavbarTop/>
+          <Navbar/>
+          <NavbarBottom/>
+        </div>
+        <main >
             {children}
         </main>
     </>

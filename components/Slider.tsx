@@ -24,7 +24,6 @@ const Sliders = ({sliderList}:SliderProps) => {
               <CarouselItem key={index} className="md:basis-28 lg:basis-1/8 items-center flex flex-col">
               <Avatar className='h-16 w-16 hover:border-orange-500 border-2 rounded-full'>
                 <AvatarImage 
-                
                   src={
                     process.env.NEXT_PUBLIC_BASE_URL+
                     slider?.attributes?.url.data.attributes.url
