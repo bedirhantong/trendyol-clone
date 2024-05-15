@@ -19,7 +19,7 @@ import { MainScreenProduct } from '@/types';
 interface MainScreenProductProps {
     mainScreenProductList : MainScreenProduct[];
 }
-export const MainScreenProduct = ({mainScreenProductList}:MainScreenProductProps) => {
+export const MainScreenProductList = ({mainScreenProductList}:MainScreenProductProps) => {
   return (
     <Carousel className='pb-10'>
         <CarouselContent className='px-2'>

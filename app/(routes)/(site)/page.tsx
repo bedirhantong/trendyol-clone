@@ -1,7 +1,7 @@
 import { getCategory } from "@/actions/getMostCat";
 import { getProducts } from "@/actions/getProduct";
 import { getSlider } from "@/actions/getSlider";
-import { MainScreenProduct } from "@/components/MainScreenProduct";
+import { MainScreenProductList } from "@/components/MainScreenProduct";
 import Sliders from "@/components/Slider";
 import SuprisedCategories from "@/components/SuprisedCategories";
 
@@ -14,11 +14,11 @@ export default async function Home() {
       <Sliders sliderList={sliderList} />
       <SuprisedCategories suprisedCategoryList={mostCategory} />
       <h2 className="p-2 flex justify-start font-semibold">Popüler Ürünler</h2>
-      <MainScreenProduct mainScreenProductList={productList} />
+      <MainScreenProductList mainScreenProductList={productList} />
       <h2 className="p-2 flex justify-start font-semibold">Çok Satan Ürünler</h2>
-      <MainScreenProduct mainScreenProductList={productList} />
+      <MainScreenProductList mainScreenProductList={productList} />
       <h2 className="p-2 flex justify-start font-semibold">Avantajlı Ürünler</h2>
-      <MainScreenProduct mainScreenProductList={productList} />
+      <MainScreenProductList mainScreenProductList={productList} />
         <footer className="bg-black py-12 px-6 flex flex-col items-center">
             <div className="flex flex-wrap justify-between max-w-7xl">
               <div className="flex items-center">

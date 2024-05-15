@@ -16,6 +16,7 @@ export type MostCategory = {
 }
 
 export type MainScreenProduct = {
+    attributes: any;
     id : number;
     name : string;
     url:string;
