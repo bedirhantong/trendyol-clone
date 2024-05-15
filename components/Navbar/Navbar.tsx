@@ -7,6 +7,7 @@ import {
     HoverCardTrigger,
   } from "@/components/ui/hover-card"
 import { Button } from '../ui/button'
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
@@ -34,9 +35,14 @@ const Navbar = () => {
                         <User className='h-4 w-4 '/>
                         Giriş Yap
                     </h2></HoverCardTrigger>
-                <HoverCardContent className='flex flex-col gap-2'>
+                <HoverCardContent className='flex flex-col gap-2 items-center'>
+                    <Link href="/sign-in">
                     <Button className='bg-orange-500 hover:bg-orange-500 '>Giriş Yap</Button>
+                    </Link>
+                    <Link href="/create-user">
                     <Button  variant="outline" className=''>Üye Ol</Button>
+                    </Link>
+                    
                 </HoverCardContent>
             </HoverCard>
             <h2 className='flex gap-1 items-center hover:text-orange-500 font-medium text-xs'>

@@ -10,7 +10,7 @@ This project has two main components:
 2. cms_trendyol_clone: The project used to stand up the backend and database using Strapi and Render Dashboard. 
 - `In the future, I will combine the two projects under a single project.`
 
-## Teknolojiler
+## Technologies
 
 The following technologies and tools were used in this project:
 

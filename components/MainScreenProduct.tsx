@@ -21,11 +21,11 @@ interface MainScreenProductProps {
 }
 export const MainScreenProduct = ({mainScreenProductList}:MainScreenProductProps) => {
   return (
-    <Carousel >
+    <Carousel className='pb-10'>
         <CarouselContent className='px-2'>
             {mainScreenProductList.map((mainScreenProduct,index)=>(
               <CarouselItem key={index} className="md:basis-48 lg:basis-1/5 items-center flex flex-col ">
-                <Card className=''>
+                <Card className='hover:border-orange-500'>
                     <CardHeader>
                         <CardTitle className='flex justify-center'>
                         <img key={index} 
@@ -42,7 +42,7 @@ export const MainScreenProduct = ({mainScreenProductList}:MainScreenProductProps
                             </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <p className=''>{mainScreenProduct.attributes?.description}</p>
+                        <p className='line-clamp-4'>{mainScreenProduct.attributes?.description}</p>
                     </CardContent>
                     <CardFooter>
                      <p className='text-orange-500'>{mainScreenProduct.attributes?.price} TL</p>
